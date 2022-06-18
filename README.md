@@ -9,8 +9,8 @@ Highly Efficient Stratum Server for Ravencoin!
 ### Cyber Pool Ravencoin consists of 2 main modules:
 | Project | Link |
 | ------------- | ------------- |
-| [Cyberpool Ravencoin Server](https://github.com/cyberpoolorg/cyberpool-ravencoin-server) | https://github.com/cyberpoolorg/cyberpool-ravencoin-server |
-| [Cyberpool Ravencoin Stratum](https://github.com/cyberpoolorg/cyberpool-ravencoin-stratum) | https://github.com/cyberpoolorg/cyberpool-ravencoin-stratum |
+| [Cyberpool Ravencoin Server](https://github.com/Seal-Clubber/cyberpool-ravencoin-server) | https://github.com/Seal-Clubber/cyberpool-ravencoin-server |
+| [Cyberpool Ravencoin Stratum](https://github.com/Seal-Clubber/Ravencoin-stratum-server) | https://github.com/Seal-Clubber/Ravencoin-stratum-server |
 
 -------
 ### Requirements
@@ -71,13 +71,13 @@ Other helpfull commands.
     sudo apt install git -y
     cd ~
     git config --global http.https://gopkg.in.followRedirects true
-    git clone https://github.com/cyberpoolorg/cyberpool-ravencoin-server.git
+    git clone https://github.com/Seal-Clubber/cyberpool-ravencoin-server.git
     cd cyberpool-ravencoin-server/
     ./install.sh
     
     or
     
-    curl -L https://raw.githubusercontent.com/cyberpoolorg/cyberpool-ravencoin-server/master/install.sh | bash
+    curl -L https://raw.githubusercontent.com/Seal-Clubber/cyberpool-ravencoin-server/master/install.sh | bash
 
 -------
 ### Configure Server
