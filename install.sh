@@ -52,7 +52,7 @@ npm install -g pm2@5.1.1
 npm install -g npm@latest-6
 
 git config --global http.https://gopkg.in.followRedirects true
-git clone https://github.com/cyberpoolorg/cyberpool-ravencoin-server
+git clone https://github.com/Seal-Clubber/cyberpool-ravencoin-server
 chmod -R +x cyberpool-ravencoin-server/
 cd cyberpool-ravencoin-server
 
