@@ -45,7 +45,7 @@
         "sslport": 443,
         "sslkey": "/home/pool/cyberpool-ravencoin-server/certs/privkey.pem",
         "sslcert": "/home/pool/cyberpool-ravencoin-server/certs/fullchain.pem",
-        "stratumHost": "raven.cyberpool.org",
+        "stratumHost": "IP or DOMAIN of pool",
         "stats": {
             "updateInterval": 300,
             "historicalRetention": 43200,
