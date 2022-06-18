@@ -1,5 +1,5 @@
 {
-    "enabled": false,
+    "enabled": true,
     "coin": "ravencoin.json",
     "address": "your_wallet_address",
     "rewardRecipients": {
@@ -14,7 +14,7 @@
         "coinPrecision": 8,
         "daemon": {
             "host": "127.0.0.1",
-            "port": 8768,
+            "port": 8766,
             "user": "your_rpc_user",
             "password": "your_rpc_password"
         }
@@ -72,7 +72,7 @@
     "daemons": [
         {
             "host": "127.0.0.1",
-            "port": 8768,
+            "port": 8766,
             "user": "your_rpc_user",
             "password": "your_rpc_password"
         }
