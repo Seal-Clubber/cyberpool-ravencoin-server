@@ -56,7 +56,7 @@
         "ls": "^0.2.1",
         "mime-types": "^2.1.31",
         "moment": "^2.29.1",
-        "multi-hashing": "^1.0.0",
+        "multi-hashing": "git+https://github.com/Seal-Clubber/node-multi-hashing.git",
         "newrelic": "^5.1.0",
         "node-json-minify": "^1.0.0",
         "node-watch": "^0.7.1",
