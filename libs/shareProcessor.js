@@ -25,6 +25,8 @@ const logger = loggerFactory.getLogger('ShareProcessor', 'system');
 module.exports = function(poolConfig) {
 	var redisConfig = poolConfig.redis;
 	var coin = poolConfig.coin.name;
+	var processingConfig = poolConfig.paymentProcessing;
+   	var soloEnabled = processingConfig.schema === "solo" || false;
 	var forkId = process.env.forkId;
 	let logger = loggerFactory.getLogger(`ShareProcessor [:${forkId}]`, coin);
 	var logSystem = 'Pool';
