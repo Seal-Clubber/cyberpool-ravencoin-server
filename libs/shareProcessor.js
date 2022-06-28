@@ -111,13 +111,20 @@ module.exports = function(poolConfig) {
 					effort: shareData.blockEffort
 				};
 				blockExplorer.push(['zadd', coin + ':blockExplorer', dateNow / 1000, JSON.stringify(blocksData)]);
-				redisCommands.push(['rename', coin + ':shares:roundCurrent', coin + ':shares:round' + shareData.height]);
-				redisCommands.push(['rename', coin + ':shares:timesCurrent', coin + ':shares:times' + shareData.height]);
-				redisCommands.push(['sadd', coin + ':blocksPending', [shareData.blockHash, shareData.txHash, shareData.height].join(':')]);
-				redisCommands.push(['zadd', coin + ':lastBlock', dateNow / 1000 | 0, [shareData.blockHash, shareData.txHash, shareData.worker, shareData.height, dateNow].join(':')]);
-				redisCommands.push(['zadd', coin + ':lastBlockTime', dateNow / 1000 | 0, [dateNow].join(':')]);
-				redisCommands.push(['hincrby', coin + ':stats', 'validBlocks', 1]);
-				redisCommands.push(['hincrby', coin + ':blocksFound', shareData.worker, 1]);
+				if (soloEnabled) {
+                			/* NOTICE: You cannot switch an existing pool to SOLO. You must wipe the database due to how shares are stored */
+                			redisCommands.push(['hincrbyfloat', coin + ':shares:round' + shareData.height, shareData.worker, shareData.difficulty]);
+ 	              			redisCommands.push(['sadd', coin + ':blocksPending', [shareData.blockHash, shareData.txHash, shareData.height, shareData.worker, dateNow].join(':')]);
+                			redisCommands.push(['hincrby', coin + ':stats', 'validBlocks', 1]);
+           			} else {
+					redisCommands.push(['rename', coin + ':shares:roundCurrent', coin + ':shares:round' + shareData.height]);
+					redisCommands.push(['rename', coin + ':shares:timesCurrent', coin + ':shares:times' + shareData.height]);
+					redisCommands.push(['sadd', coin + ':blocksPending', [shareData.blockHash, shareData.txHash, shareData.height].join(':')]);
+					redisCommands.push(['zadd', coin + ':lastBlock', dateNow / 1000 | 0, [shareData.blockHash, shareData.txHash, shareData.worker, shareData.height, dateNow].join(':')]);
+					redisCommands.push(['zadd', coin + ':lastBlockTime', dateNow / 1000 | 0, [dateNow].join(':')]);
+					redisCommands.push(['hincrby', coin + ':stats', 'validBlocks', 1]);
+					redisCommands.push(['hincrby', coin + ':blocksFound', shareData.worker, 1]);
+				}
 			}
 			else if (shareData.blockHash) {            
 				redisCommands.push(['hincrby', coin + ':stats', 'invalidBlocks', 1]);           
