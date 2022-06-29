@@ -7,7 +7,7 @@
     },
     "paymentProcessing": {
         "enabled": true,
-        "schema": "solo",
+        "schema": "PROP",
         "paymentInterval": 120,
         "minimumPayment": 1,
         "minConf": 30,
