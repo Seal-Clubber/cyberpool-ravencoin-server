@@ -1,6 +1,6 @@
 {
     "enabled": true,
-    "coin": "ravencoin.json",
+    "coin": "ravencoin-solo.json",
     "address": "your_wallet_address",
     "rewardRecipients": {
         "your_wallet_address": 0.5
